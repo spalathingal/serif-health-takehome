@@ -36,9 +36,9 @@ You should write code that can read in these two files (it's ok to copy them loc
 Your output should be one CSV file per input file (two CSV files total) with the following header columns:
 `Procedure Code, Procedure Code Type, Procedure Name, Gross Charge, Insurance Payer Name, Insurance Rate`
 
-You should extract as many of these 'price' rows as you can *without duplicating entries* and *without copying over empty or dirty data fields* (denoted by N/A, empty strings, dashes, or missing keys). 
+You should extract as many of these 'price' rows as you can *without duplicating entries* and *ignoring empty or malformed data fields* (denoted by 'N/A', empty strings, etc.). 
 
-For simplicity's sake we are ignoring complicating factors like modifiers, patient tiers, facility types and other details that might be in the file. Happy to discuss these in a followup call if you're curious, but those should stay out of your output for now. 
+For simplicity's sake you may ignore complicating factors and fields like modifiers, inpatient/outpatient status, provider specialities, facility types and other details that might be in the file.
 
 
 ### Deliverable
