@@ -24,21 +24,21 @@ The objective for this takehome is to write a script that can take the data from
 
 
 ## Inputs
-The input to this takehome are two JSON format hospital price files from different healthcare systems. A typical 'price' entity in these files consists of a procedure name, procedure code, procedure code type, gross charge (what is billed to the payer), and reimbursement rate (what is actually paid under the contracted rate). 
+The input to this takehome are two JSON format hospital price files from different healthcare systems. A typical 'price' entity in these files consists of a procedure name, procedure code, procedure code type, gross charge (what is billed to the payer), and reimbursement rate (the mean rate actually paid out under the established contract). 
 
 [Centinela Hospital](https://www.centinelamed.com/261150758_CentinelaHospitalMedicalCenter_standardcharges.json)
 
 [Advent Health Shawnee Mission Hospital](https://www.adventhealth.com/sites/default/files/CDM/2022/480637331_AdventHealthShawneeMission_standardcharges.json)
 
-The code you should write is a script/class/function that can read in these two files (it's ok to copy them locally / assume on local disk if easier to work with), extract the price entities contained within, and convert the data into the requested output format below. 
+You should write code that can read in these two files (it's ok to copy them locally / assume on local disk if easier to work with), extract the price entities contained within, and convert the data into the requested output format below. 
 
 ## Outputs
 Your output should be one CSV file per input file (two CSV files total) with the following header columns:
 `Procedure Code, Procedure Code Type, Procedure Name, Gross Charge, Insurance Payer Name, Insurance Rate`
 
-You should extract as many 'price' rows as you can without duplicating entries and without copying over empty or dirty data fields (denoted by N/A, empty strings, dashes, or missing keys). 
+You should extract as many of these 'price' rows as you can *without duplicating entries* and *without copying over empty or dirty data fields* (denoted by N/A, empty strings, dashes, or missing keys). 
 
-For simplicity's sake we are ignoring complicating factors like modifiers, patient tiers, facility types and other details that might be in the file. Happy to discuss these in a followup call if interested, but those should stay out of your output for now. 
+For simplicity's sake we are ignoring complicating factors like modifiers, patient tiers, facility types and other details that might be in the file. Happy to discuss these in a followup call if you're curious, but those should stay out of your output for now. 
 
 
 ### Deliverable
