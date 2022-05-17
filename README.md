@@ -18,19 +18,23 @@ Summed together, all this complexity contributes to a general lack of transparen
 
 
 ## Objective
-Our customers typically want to know and compare reimbursement rates for healthcare services from specific payers. The objective for this takehome is to write a script that can take the data from a typical hospital price transparency file, parse it, and transform it to a normalized format we can ingest and leverage in our data warehouse for aggregation, search, and display. 
+Our customers typically want to know and compare reimbursement rates for healthcare services from specific payers. 
+
+The objective for this takehome is to write a script that can take the data from a typical hospital price transparency file, parse it, and transform it to a normalized format we can ingest and leverage in our data warehouse for aggregation, search, and display. 
 
 
 ## Input
 The input to this takehome are two JSON format hospital price files from different healthcare systems. A typical 'price' entity in these files consists of a procedure name, procedure code, procedure code type, gross charge (what is billed to the payer), and reimbursement rate (what is actually paid under the contracted rate). 
-https://www.centinelamed.com/261150758_CentinelaHospitalMedicalCenter_standardcharges.json
-https://www.adventhealth.com/sites/default/files/CDM/2022/480637331_AdventHealthShawneeMission_standardcharges.json
 
-The code you need to write should be a script that can read in these two files (it's ok to copy them locally) and turn it into the requested output format below. 
+[Centinela Hospital](https://www.centinelamed.com/261150758_CentinelaHospitalMedicalCenter_standardcharges.json)
+
+[Advent Health Shawnee Mission Hospital](https://www.adventhealth.com/sites/default/files/CDM/2022/480637331_AdventHealthShawneeMission_standardcharges.json)
+
+The code you need to write should be a script that can read in these two files (it's ok to copy them locally if easier to work with) and turn it into the requested output format below. 
 
 ## Output
-Your output should be two CSV files, one per input file, with the following headers:
-'Procedure Code, Procedure Code Type, Procedure Name, Gross Charge, Insurance Payer Name, Insurance Rate'
+Your output should be two CSV files, one per input file, with the following header columns:
+`Procedure Code, Procedure Code Type, Procedure Name, Gross Charge, Insurance Payer Name, Insurance Rate`
 
 You should extract as many 'price' rows as you can without duplicating entries and without copying over empty data fields (denoted by N/A, empty strings, or missing keys). 
 
