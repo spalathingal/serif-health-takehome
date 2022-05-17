@@ -3,7 +3,7 @@
 This repository contains the files and instructions for our takehome engineering interview. Please *locally* copy to your own public repo or [import](https://github.com/new/import) to your github account for use in sharing solutions back to us. Direct public forks and pull requests will expose your identity and solution to other candidates also working on this interview question, and we want the interview process to be fair for everyone. 
 
 ## Context
-Serif Health was founded with a mission  to make the US healthcare system more transparent, efficient, and affordable for everyone. One of the challenging problems we're solving at Serif Health is making healthcare *pricing* data transparent and uniform for all market participants. There are myriad reasons this is difficult.
+Serif Health was founded with a mission to make the US healthcare system more transparent, efficient, and affordable for everyone. One of the challenging problems we're solving at Serif Health is making healthcare *pricing* data transparent and uniform for all market participants. There are myriad reasons this is difficult.
 
 At the macro level:
 - Data in healthcare is protected by law, sensitive by default and tends to be locked up in proprietary systems or data formats.
@@ -14,46 +14,48 @@ At the micro level:
 - Medical billing and coding for a specific procedures can very complicated and is contingent on place of service, comorbidities, and structure of insurance arrangements. 
 - Insurance companies (payers) establish pre-negotiated non-published contracted rates with each facility, physician group, or health system that reimburses the healthcare provider at a rate very different from what is 'charged'. 
 
-Summed together, all this complexity contributes to a general lack of transparency and market efficency in the US healthcare system.
+Summed together, all this complexity contributes to a general lack of transparency and market efficency in our healthcare system.
 
 
 ## Objective
-Our customers typically want to know and compare reimbursement rates for healthcare services from specific payers. 
+Our customers typically want to know and compare reimbursement rates for healthcare services from specific payers. As mentioned earlier, one public data source for reimbursement rates is hospital price transparency files - most hospitals at this point are at least partially compliant publishing their reimbursement rates. Unfortunately, those files do not come in a standardized format. 
 
-The objective for this takehome is to write a script that can take the data from a typical hospital price transparency file, parse it, and transform it to a normalized format we can ingest and leverage in our data warehouse for aggregation, search, and display. 
+The objective for this takehome is to write a script that can take the data from a couple of hospital price transparency files, parse them, and transform them to a normalized format we can ingest and leverage in our data warehouse for aggregation, search, and display. 
 
 
-## Input
+## Inputs
 The input to this takehome are two JSON format hospital price files from different healthcare systems. A typical 'price' entity in these files consists of a procedure name, procedure code, procedure code type, gross charge (what is billed to the payer), and reimbursement rate (what is actually paid under the contracted rate). 
 
 [Centinela Hospital](https://www.centinelamed.com/261150758_CentinelaHospitalMedicalCenter_standardcharges.json)
 
 [Advent Health Shawnee Mission Hospital](https://www.adventhealth.com/sites/default/files/CDM/2022/480637331_AdventHealthShawneeMission_standardcharges.json)
 
-The code you need to write should be a script that can read in these two files (it's ok to copy them locally if easier to work with) and turn it into the requested output format below. 
+The code you should write is a script/class/function that can read in these two files (it's ok to copy them locally / assume on local disk if easier to work with), extract the price entities contained within, and convert the data into the requested output format below. 
 
-## Output
-Your output should be two CSV files, one per input file, with the following header columns:
+## Outputs
+Your output should be one CSV file per input file (two CSV files total) with the following header columns:
 `Procedure Code, Procedure Code Type, Procedure Name, Gross Charge, Insurance Payer Name, Insurance Rate`
 
-You should extract as many 'price' rows as you can without duplicating entries and without copying over empty data fields (denoted by N/A, empty strings, or missing keys). 
+You should extract as many 'price' rows as you can without duplicating entries and without copying over empty or dirty data fields (denoted by N/A, empty strings, dashes, or missing keys). 
 
-For simplicity's sake we are ignoring modifiers, patient tiers, insurance payer classes, facility type and other vagaries of the healthcare billing and coding world. We can discuss these in a followup call if interested. 
+For simplicity's sake we are ignoring complicating factors like modifiers, patient tiers, facility types and other details that might be in the file. Happy to discuss these in a followup call if interested, but those should stay out of your output for now. 
 
 
-## Expectations
 ### Deliverable
-You should send us a link to a public repository or zip file that contains at minimum:
-1. The script used to parse the file and produce output. 
+You should send us a link to a public repository or zip file that contains at miminum:
+1. The script or code used to parse the file and produce output. 
 2. The setup or packaging file(s) required to bootstrap and execute your solution code
 3. The two CSV output files generated by your code
-4. A readme, explaining your solution and the tradeoffs you made along the way. 
+4. A README file, explaining your solution, how long it took you to write, and the tradeoffs you made along the way. 
 
-### Langugage Choice
+## Expectations
+### Time vs Quality
+We are a small engineering team with limited resources, and often have to make hard tradeoffs to meet deadlines and make rapid forward progress. We do not want this takehome to take more than a few hours out of your day. So, please timebox coding your solution to two hours max, and know that you have the opportunity to discuss the tradeoffs you made when submitting your solution. Experienced engineers should be able to complete the coding portion in about an hour. If you think this will take you dramatically more time than that, let us know before starting the takehome so we can discuss why. If you don't believe code produced in that timeframe can ever be considered production-worthy, an early-stage startup might not be the best environment for you. 
+
+If you finish early, we'd recommend adding additional notes or commentary to the README (e.g. discussion of performance characteristics, how you would ideally test/deploy/run your code in a production environment, feature iterations that might come next, so on), but please don't exceed the timebox doing so. 
+
+### Language Choice
 You can choose any language you want, but your solution should be portable enough to run on someone else's machine. 
 
 ### Dependencies
-You *should* use dependencies (JSON parsers, data formatters, etc) and libraries from public package managers in your language of choice. Again, your solution should be portable enough to run on someone else's machine, so if you do this please make sure relevant setup instructions to execute the solution. 
-
-### Time vs Quality
-We are a small engineering team with limited resources, and often have to make hard tradeoffs to meet deadlines and make rapid forward progress. Please timebox your solution to two hours max - you have the opportunity to discuss the tradeoffs when submitting your solution. Experienced engineers should be able to complete the coding portion in less than an hour. 
+You can and *probably should* use dependencies (JSON parsers, type validators, etc) and libraries from public package managers in your language of choice. Again, your solution should be portable enough to run on someone else's machine, so if you leverage packaged dependencies this please make sure relevant setup instructions to install the dependencies and execute the solution are included.
