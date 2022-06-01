@@ -34,7 +34,7 @@ You should write code that can read in these two files (it's ok to copy them loc
 
 ## Outputs
 Your output should be one CSV file per input file (two CSV files total) with the following header columns:
-`Procedure Code, Procedure Code Type, Procedure Name, Gross Charge, Insurance Payer Name, Insurance Rate`
+`CPT/DRG Code, Code Type, Procedure Name, Gross Charge, Insurance Payer Name, Insurance Rate`
 
 You should extract as many of these 'price' rows as you can *without duplicating entries* and *ignoring empty or malformed data fields* (denoted by 'N/A', empty strings, etc.). 
 
