@@ -38,7 +38,7 @@ Your output should be one CSV file per input file (two CSV files total) with the
 
 You should extract as many of these 'price' rows as you can *without duplicating entries* and *ignoring empty or malformed data fields* (denoted by 'N/A', empty strings, etc.). 
 
-For simplicity's sake you may ignore complicating factors and fields like modifiers, inpatient/outpatient status, provider specialities, facility types and other details that might be in the file. 
+For simplicity's sake you should ignore complicating data fields like modifiers, inpatient/outpatient status, provider specialities, facility types and other details that might be in the file. We can discuss these in the follow up. 
 
 
 ## Hints and Pointers
