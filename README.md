@@ -20,11 +20,11 @@ Summed together, all this complexity contributes to a general lack of transparen
 ## Objective
 Our customers typically want to know and compare reimbursement rates for healthcare services from specific payers. As mentioned earlier, one public data source for reimbursement rates is hospital price transparency files - most hospitals at this point are at least partially compliant publishing their reimbursement rates. Unfortunately, those files do not come in a standardized format. 
 
-The objective for this takehome is to write a script that can take the data from a couple of hospital price transparency files, parse them, and transform them to a normalized format we can ingest and leverage in our data warehouse for aggregation, search, and display. 
+The objective for this takehome is to write a script that can take the data from a couple of hospital price transparency files, parse them, and transform them to a normalized format we can ingest and leverage in our data warehouse for aggregation, search, and display by our customers. 
 
 
 ## Inputs
-The input to this takehome are two JSON format hospital price files from different healthcare systems. A typical 'price' entity in these files consists of a procedure name, procedure code, procedure code type, gross charge (what is billed to the payer), and reimbursement rate (the mean rate actually paid out under the established contract). 
+The input to this takehome are two JSON format hospital price files from different healthcare systems. A typical 'price' entity in these files consists of a procedure name, CPT or DRG code, code type (indicating procedure type which it is), gross charge (what is billed to the payer), and reimbursement rate (the mean rate the payer actually pays the provider under the established contract). 
 
 [Centinela Hospital](https://www.centinelamed.com/261150758_CentinelaHospitalMedicalCenter_standardcharges.json)
 
@@ -34,11 +34,15 @@ You should write code that can read in these two files (it's ok to copy them loc
 
 ## Outputs
 Your output should be one CSV file per input file (two CSV files total) with the following header columns:
-`CPT/DRG Code, Code Type, Procedure Name, Gross Charge, Insurance Payer Name, Insurance Rate`
+`CPT/DRG Code, Code Type, Procedure Description, Gross Charge, Insurance Payer Name, Insurance Rate`
 
 You should extract as many of these 'price' rows as you can *without duplicating entries* and *ignoring empty or malformed data fields* (denoted by 'N/A', empty strings, etc.). 
 
-For simplicity's sake you may ignore complicating factors and fields like modifiers, inpatient/outpatient status, provider specialities, facility types and other details that might be in the file.
+For simplicity's sake you may ignore complicating factors and fields like modifiers, inpatient/outpatient status, provider specialities, facility types and other details that might be in the file. 
+
+
+## Hints and Pointers
+As you start working with the files, you'll quickly notice that field names aren't standardized and can overlap in non-ideal ways. For example, 'procedure code' in one of the files is a generic internal hospital identifier, NOT the industry-standard CPT or DRG code. Payer data might be represented as a tuple of payer_name and payer_rate, or it might be just key-value pairs of payer names to prices. Use your best judgement to proceed here, and discuss your decisions in your writeup. 
 
 
 ### Deliverable
@@ -50,7 +54,7 @@ You should send us a link to a public repository or zip file that contains at mi
 
 ## Expectations
 ### Time vs Quality
-We are a small engineering team with limited resources, and often have to make hard tradeoffs to meet deadlines and make rapid forward progress. We do not want this takehome to take more than a few hours out of your day. So, please timebox coding your solution to two hours max, and know that you have the opportunity to discuss the tradeoffs you made when submitting your solution. Experienced engineers should be able to complete the coding portion in about an hour. If you think this will take you dramatically more time than that, let us know before starting the takehome so we can discuss why. If you don't believe code produced in that timeframe can ever be considered production-worthy, an early-stage startup might not be the best environment for you. 
+We are a small engineering team with limited resources, and often have to make hard tradeoffs to meet deadlines and make rapid forward progress. We do not want this takehome to take more than a few hours out of your day. So, please timebox coding your solution to two hours max, and know that you have the opportunity to discuss the tradeoffs you made when submitting your solution. Experienced engineers should be able to complete the coding portion in about 90 minutes, perhaps less if you have prior healthcare experience. If you think this will take you dramatically more time than that, let us know before starting the takehome so we can discuss why. 
 
 If you finish early, we'd recommend adding additional notes or commentary to the README (e.g. discussion of performance characteristics, how you would ideally test/deploy/run your code in a production environment, feature iterations that might come next, so on), but please don't exceed the timebox doing so. 
 
