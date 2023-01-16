@@ -11,7 +11,7 @@ At the macro level:
 - Recent price transparency laws have required hospitals and payers to publish their pricing, data sharing occurs at varying levels of completeness and consistency.  
 
 At the micro level:
-- Medical billing and coding for a specific procedures can very complicated and is contingent on place of service, patient history and comorbidities, structure of insurance arrangements, so on and so forth. Many procedures are lots of N of 1 type cases. 
+- Medical billing and coding for a specific procedure can be very complicated and is contingent on place of service, patient history and comorbidities, structure of insurance arrangements, so on and so forth. Many procedures are lots of N of 1 type cases. 
 - Insurance companies (payers) establish pre-negotiated non-published contracted rates with each facility, physician group, or health system that reimburses the healthcare provider at a rate and structure very different from what is 'charged'. 
 
 Summed together, all this complexity contributes to a general lack of transparency and market efficency in our healthcare system.
