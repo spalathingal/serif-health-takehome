@@ -8,7 +8,7 @@ Serif Health was founded with a mission to make the US healthcare system more tr
 At the macro level:
 - Most data in healthcare is protected by law, sensitive by default and tends to be locked up in proprietary systems or data formats.
 - The data aggregators and clearinghouses that do have access to clean, normalized bulk data assets tend to employ extremely expensive and restrictive licensing terms. 
-- Recent price transparency laws have required hospitals and payers to publish their pricing, data sharing occurs at varying levels of completeness and consistency.  
+- While recent price transparency laws have required hospitals and payers to publish their pricing, compliance and data sharing occurs at varying levels of completeness and consistency.  
 
 At the micro level:
 - Medical billing and coding for a specific procedure can be very complicated and is contingent on place of service, patient history and comorbidities, structure of insurance arrangements, so on and so forth. Many procedures are lots of N of 1 type cases. 
