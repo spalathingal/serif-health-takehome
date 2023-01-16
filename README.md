@@ -37,13 +37,13 @@ Your output should be the list of URLs corresponding to Anthem's Empire BCBS New
 
 
 ## Hints and Pointers
-As you start working with the index, you'll quickly notice that data is very frequently repeated, plan information seems to be named after small businesses in various regions around the country, and that there's lots of different url styles. Think about this - what could this mean for network boundaries? How do you figure out the PPO with the information you have?
+As you start working with the index, you'll quickly notice that the index file itself is extremly large, data is very frequently repeated, plan information seems to be named after small businesses in various regions around the country, and that there's lots of different url styles. Think about this - how do you handle the file size and format efficiently? What could the data mean for network boundaries? How does the data in the file intersect with the other Anthem website? How do you figure out the PPO with the information you have?
 
 Use your best judgement to proceed here, and discuss your decisions in your writeup. 
 
 
 ### Deliverable
-You should send us a link to a public repository or zip file that contains at miminum:
+You should [send us](mailto:engineering@serifhealth.com) a link to a public repository or zip file that contains at miminum:
 1. The script or code used to parse the file and produce output. 
 2. The setup or packaging file(s) required to bootstrap and execute your solution code
 3. The output URL list.
