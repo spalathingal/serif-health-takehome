@@ -27,17 +27,17 @@ For this interview, we'll give you the web URLs and we'll skip MRF processing fo
 
 
 ## Inputs
-The input to this takehome are the Anthem machine readable index file [table of contents](https://antm-pt-prod-dataz-nogbd-nophi-us-east1.s3.amazonaws.com/anthem/2023-01-01_anthem_index.json.gz), and Anthem's EIN lookup service, located here [Anthem TOC](https://www.anthem.com/machine-readable-file/search/). 
+The input to this takehome are the Anthem machine readable index file [table of contents](https://antm-pt-prod-dataz-nogbd-nophi-us-east1.s3.amazonaws.com/anthem/2023-01-01_anthem_index.json.gz), and Anthem's EIN lookup service, located here [Anthem EIN lookup](https://www.anthem.com/machine-readable-file/search/). 
 
 You should write code that can open the machine readable index file and process it according to the schema published at [CMS' transparency in coverage repository](https://github.com/CMSgov/price-transparency-guide/tree/master/schemas/table-of-contents), so you can extract the data requested below.
 
 
 ## Outputs
-Your output should be the list of URLs corresponding to Anthem's Empire BCBS New York PPO network. 
+Your output should be the list of URLs corresponding to Anthem's New York State PPO network. 
 
 
 ## Hints and Pointers
-As you start working with the index, you'll quickly notice that the index file itself is extremly large, data is very frequently repeated, plan information seems to be named after small businesses in various regions around the country, and that there's lots of different url styles. Think about this - how do you handle the file size and format efficiently? What could the data mean for network boundaries? How does the data in the file intersect with the other Anthem website? How do you figure out the PPO with the information you have?
+As you start working with the index, you'll quickly notice that the index file itself is extremly large, data is very frequently repeated, plan information seems to be named after small businesses in various regions around the country, and that there's lots of different url styles. Think about this - how do you handle the file size and format efficiently? What could the url and filename format mean for identifying network class (PPO vs. HMO) and boundaries (NY vs. NJ)? How does the data in the file intersect with the Anthem EIN lookup? How do you figure out the PPO with the information you have?
 
 Use your best judgement to proceed here, and discuss your decisions in your writeup. 
 
