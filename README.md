@@ -33,11 +33,12 @@ You should write code that can open the machine readable index file and process 
 
 
 ## Outputs
-Your output should be the list of URLs corresponding to Anthem's New York State PPO network. 
+Your output should be the list of URLs corresponding to Anthem's New York State PPO network. Make sure to read through the hints and pointers section before declaring your solution complete.
+
 
 
 ## Hints and Pointers
-As you start working with the index, you'll quickly notice that the index file itself is extremly large, data is very frequently repeated, plan information seems to be named after small businesses in various regions around the country, and that there's lots of different url styles. Think about this - how do you handle the file size and format efficiently? What could the url and filename format mean for identifying network class (PPO vs. HMO) and boundaries (NY vs. NJ)? How does the data in the file intersect with the Anthem EIN lookup? How do you figure out the PPO with the information you have?
+As you start working with the index, you'll quickly notice that the index file itself is extremly large, data is very frequently repeated, plan information seems to be named after small businesses in various regions around the country, and that there's lots of different url styles. Think about this - how do you handle the file size and format efficiently? What could the url and filename format mean for identifying network class (PPO vs. HMO) and boundaries (NY vs. NJ)? How do the Plan IDs in the file intersect with the Anthem EIN lookup? How does the EIN lookup help you figure out the PPO?
 
 Use your best judgement to proceed here, and discuss your decisions in your writeup. 
 
