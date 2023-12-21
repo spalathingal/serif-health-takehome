@@ -27,18 +27,18 @@ For this interview, we'll give you the web URLs and we'll skip MRF processing fo
 
 
 ## Inputs
-The input to this takehome are the Anthem machine readable index file [table of contents](https://antm-pt-prod-dataz-nogbd-nophi-us-east1.s3.amazonaws.com/anthem/2023-04-01_anthem_index.json.gz), and Anthem's EIN lookup service, located here [Anthem EIN lookup](https://www.anthem.com/machine-readable-file/search/). 
+The input to this takehome is the Anthem machine readable index file [table of contents](https://antm-pt-prod-dataz-nogbd-nophi-us-east1.s3.amazonaws.com/anthem/2023-12-01_anthem_index.json.gz) for December. 
 
 You should write code that can open the machine readable index file and process it according to the schema published at [CMS' transparency in coverage repository](https://github.com/CMSgov/price-transparency-guide/tree/master/schemas/table-of-contents), so you can extract the data requested below.
+
+As you work with the data, you may find Anthem's organization lookup system helpful. This lookup can be used to gather additional information for specific organization names and EINs: [Anthem EIN lookup]([https://www.anthem.com/machine-readable-file/search/](https://www.anthem.com/machine-readable-file/search/)). 
 
 
 ## Outputs
 Your output should be the list of URLs corresponding to Anthem's New York State PPO network. Make sure to read through the hints and pointers section before declaring your solution complete.
 
-
-
 ## Hints and Pointers
-As you start working with the index, you'll quickly notice that the index file itself is extremly large, data is very frequently repeated, plan information seems to be named after small businesses in various regions around the country, and that there's lots of different url styles. Think about this - how do you handle the file size and format efficiently? What could the url and filename format mean for identifying network class (PPO vs. HMO) and boundaries (NY vs. NJ)? How do the Plan IDs in the file intersect with the Anthem EIN lookup? How does the EIN lookup help you figure out the PPO? 
+As you start working with the index, you'll quickly notice that the index file itself is extremly large, data is very frequently repeated, plan information seems to be named after small businesses in various regions around the country, and that there's lots of different url styles. Think about this - how do you handle the file size and format efficiently? What could the url and filename format mean for identifying network class (PPO vs. HMO) and boundaries (NY vs. NJ)? How do the Plan IDs in the file intersect with the Anthem EIN lookup? How can the EIN lookup help you verify the files included in the PPO? 
 
 Use your best judgement to proceed here, and discuss your decisions in your writeup. 
 
