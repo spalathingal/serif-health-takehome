@@ -46,7 +46,7 @@ First off, how do you handle the file size and format efficiently, when the unco
 
 Do the URLs in the index file signal anything that might help you identifying network class (PPO vs. HMO) and/or boundaries (NY vs. NJ)? 
 
-As you work with the data, you may find Anthem's organization lookup system helpful. This lookup can be used to gather additional information for specific organization names and EINs: [Anthem EIN lookup]([https://www.anthem.com/machine-readable-file/search/](https://www.anthem.com/machine-readable-file/search/)).  How do the Plan IDs in the file intersect with the Anthem EIN lookup? How can this EIN and organization lookup tool help you verify the file lists in the index and confirm if the underlying file represents the PPO vs. EPO vs. HMO?
+As you work with the data, you may find Anthem's organization lookup system helpful. This lookup can be used to gather additional information for specific organization names and EINs: [Anthem EIN lookup]([https://www.anthem.com/machine-readable-file/search/]).  How do the Plan IDs in the file intersect with the Anthem EIN lookup? How can this EIN and organization lookup tool help you verify the file lists in the index and confirm if the underlying file represents the PPO vs. EPO vs. HMO?
 
 Use your best judgement to proceed here, and discuss your decisions in your writeup. 
 
