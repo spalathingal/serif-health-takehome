@@ -8,37 +8,45 @@ Serif Health was founded with a mission to make the US healthcare system more tr
 At the macro level:
 - Most data in healthcare is protected by law, sensitive by default and tends to be locked up in proprietary systems or data formats.
 - The data aggregators and clearinghouses that do have access to clean, normalized bulk data assets tend to employ extremely expensive and restrictive licensing terms. 
-- While recent price transparency laws have required hospitals and payers to publish their pricing, compliance and data sharing occurs at varying levels of completeness and consistency.  
+- While recent price transparency laws have required hospitals and carriers to publish their pricing, compliance and data sharing occurs at varying levels of completeness and consistency.  
 
 At the micro level:
 - Medical billing and coding for a specific procedure can be very complicated and is contingent on place of service, patient history and comorbidities, structure of insurance arrangements, so on and so forth. Many procedures are lots of N of 1 type cases. 
-- Insurance companies (payers) establish pre-negotiated non-published contracted rates with each facility, physician group, or health system that reimburses the healthcare provider at a rate and structure very different from what is 'charged'. 
+- Insurance companies (carriers) establish pre-negotiated non-published contracted rates with each facility, physician group, or health system that reimburses the healthcare provider at a rate and structure very different from what is 'charged'. 
 
 Summed together, all this complexity contributes to a general lack of transparency and market efficency in our healthcare system.
 
 
 
 ## Objective
-In July 2022, payers published their pricing data under the Transparency in Coverage Act. Those published files are extremely large and require some forethought and skill to be able to work with them - your task is to write code that can open an index file, stream through it, and isolate a set of network files in the index. 
+In July 2022, insurance carriers were required to publish their negotiated prices with all providers and facilities under the Transparency in Coverage Act. Pricing for every procedure code for every provider in the country is a lot of data; thus, the published files are extremely large and require some forethought and skill to be able to work with them. 
 
-Our customers typically want to know and compare reimbursement rates for healthcare services from specific payers. E.g., what does UnitedHealthcare reimburse orthopedic surgeons in Texas for total knee replacement surgery? To get there, we need to go to the payer's website, look up their MRF file list in a table of contents or index file, pull the MRF, extract the data, and we have our answer. 
+Our customers typically want to know and compare reimbursement rates for healthcare services from specific carriers. E.g., what does Anthem reimburse orthopedic surgeons in New York state for total knee replacement surgery? To get there, we need to go to Anthem's Transparency in Coverage website, find their appropriate index file (also called a table of contents file), look up the MRF file URLs in the index for the correct plan, pull the MRF, extract the data, and we have our answer. The challenge for us is that carriers don't always follow the schemas, so these postings and indexes aren't always easy to decipher - it takes some sleuthing and creativity to get to the answers we seek. 
 
-For this interview, we'll give you the web URLs and we'll skip MRF processing for now. We'd simply like to know, *what is the list of file URLs that represent the Anthem PPO network in New York state*? 
+For this interview, we'll give you an index file URL and we'll skip in-network MRF processing for now, since the data elements in the in-network file are significantly more complex and variant. 
+
+Your task is to write some code that can open an index file, stream through it, and isolate a set of network files in the index. We'd simply like to know, *what is the list of machine readable file URLs that represent the Anthem PPO network in New York state*? 
 
 
 ## Inputs
-The input to this takehome is the Anthem machine readable index file [table of contents](https://antm-pt-prod-dataz-nogbd-nophi-us-east1.s3.amazonaws.com/anthem/2023-12-01_anthem_index.json.gz) for December. 
+The input to this takehome is the Anthem machine readable index file [table of contents](https://antm-pt-prod-dataz-nogbd-nophi-us-east1.s3.amazonaws.com/anthem/2024-01-01_anthem_index.json.gz) for January. 
 
-You should write code that can open the machine readable index file and process it according to the schema published at [CMS' transparency in coverage repository](https://github.com/CMSgov/price-transparency-guide/tree/master/schemas/table-of-contents), so you can extract the data requested below.
+You should write code that can open the machine readable index file and process it according to the schema published at [CMS' transparency in coverage repository](https://github.com/CMSgov/price-transparency-guide/tree/master/schemas/table-of-contents), so you can extract the data requested.
 
-As you work with the data, you may find Anthem's organization lookup system helpful. This lookup can be used to gather additional information for specific organization names and EINs: [Anthem EIN lookup]([https://www.anthem.com/machine-readable-file/search/](https://www.anthem.com/machine-readable-file/search/)). 
+
 
 
 ## Outputs
 Your output should be the list of URLs corresponding to Anthem's New York State PPO network. Make sure to read through the hints and pointers section before declaring your solution complete.
 
 ## Hints and Pointers
-As you start working with the index, you'll quickly notice that the index file itself is extremly large, data is very frequently repeated, plan information seems to be named after small businesses in various regions around the country, and that there's lots of different url styles. Think about this - how do you handle the file size and format efficiently? What could the url and filename format mean for identifying network class (PPO vs. HMO) and boundaries (NY vs. NJ)? How do the Plan IDs in the file intersect with the Anthem EIN lookup? How can the EIN lookup help you verify the files included in the PPO? 
+As you start working with the index, you'll quickly notice that the index file itself is extremly large, data is very frequently repeated, plan information seems to be named after small businesses in various regions around the country, and that there are a handful of different url styles. 
+
+First off, how do you handle the file size and format efficiently, when the uncompressed file will exceed memory limitations on most systems? 
+
+Do the URLs in the index file signal anything that might help you identifying network class (PPO vs. HMO) and/or boundaries (NY vs. NJ)? 
+
+As you work with the data, you may find Anthem's organization lookup system helpful. This lookup can be used to gather additional information for specific organization names and EINs: [Anthem EIN lookup]([https://www.anthem.com/machine-readable-file/search/](https://www.anthem.com/machine-readable-file/search/)).  How do the Plan IDs in the file intersect with the Anthem EIN lookup? How can this EIN and organization lookup tool help you verify the file lists in the index and confirm PPO vs. EPO vs. HMO?
 
 Use your best judgement to proceed here, and discuss your decisions in your writeup. 
 
