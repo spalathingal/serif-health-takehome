@@ -40,13 +40,12 @@ You should write code that can open the machine readable index file and process 
 Your output should be the list of machine readable file URLs corresponding to Anthem's PPO in New York state. Make sure to read through the hints and pointers section before declaring your solution complete.
 
 ## Hints and Pointers
-As you start working with the index, you'll quickly notice that the index file itself is extremly large, data is very frequently repeated, plan information seems to be named after small businesses in various regions around the country, and that there are a handful of different url styles. 
+As you start working with the index, you'll quickly notice that the index file itself is extremly large, data is very frequently repeated, plan descriptions seem to contain random businesses in various regions around the country, and that there are a handful of different url styles. 
 
-First off, how do you handle the file size and format efficiently, when the uncompressed file will exceed memory limitations on most systems? 
-
-What do the different URL schemas mean? Which URLs are Anthem specific? Which URLs are NY specific? Which URLs are PPO specific? When do they repeat and why? When does the underlying data file pointed to by the URL repeat? Is Highmark the same as Anthem?
-
-Anthem has an interactive MRF lookup system. This lookup can be used to gather additional information - but it requires you to input the EIN or name of an employer who offers an Anthem health plan: [Anthem EIN lookup](https://www.anthem.com/machine-readable-file/search/). How can you find someone likely to be in the Anthem NY PPO? How can you use this tool to confirm which underlying file(s) represent the Anthem NY PPO?
+- How do you handle the file size and format efficiently, when the uncompressed file will exceed memory limitations on most systems? 
+- When you look at your output URL list, which segments of the URL are changing, which segments are repeating, and what might that mean?
+- Is the description field helpful? Complete? Is Highmark the same as Anthem?
+- Anthem has an interactive MRF lookup system. This lookup can be used to gather additional information - but it requires you to input the EIN or name of an employer who offers an Anthem health plan: [Anthem EIN lookup](https://www.anthem.com/machine-readable-file/search/). How can you find a businesss likely to be in the Anthem NY PPO? How can you use this tool to confirm which underlying file(s) represent the Anthem NY PPO?
 
 Use your best judgement to proceed here, and discuss your decisions in your writeup. 
 
