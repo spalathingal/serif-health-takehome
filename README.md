@@ -16,7 +16,7 @@ To write code to open a machine readable index file and process it according to 
 - Install [pipenv](https://pipenv.pypa.io/en/latest/) using pip/homebrew/apt
 - Run `pipenv install` to install dependencies
 
-### To Run
+## To Run
 - Start shell environment: `pipenv shell`
 - Run processing file: `python3 process_mrf.py`
 
@@ -28,7 +28,7 @@ Your output should be the list of machine readable file URLs corresponding to An
 - This took me about 3 hours to complete
 - Processing the file takes about 2.5 mins (ends in premature EOF error)
 
-### TradeOffs
+## TradeOffs
 - I had to write to the output per each url as opposed to waiting for the processing to finish just so I could see output as it came (to ensure it was working)
 - I had to download the file, then extract, and then process when I should have figured out how to do it through code
 - I manually typed the filename and had to create the output file ahead of time
