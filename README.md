@@ -32,3 +32,4 @@ Your output should be the list of machine readable file URLs corresponding to An
 - I had to write to the output per each url as opposed to waiting for the processing to finish just so I could see output as it came (to ensure it was working)
 - I had to download the file, then extract, and then process when I should have figured out how to do it through code
 - I manually typed the filename and had to create the output file ahead of time
+- I didn't fully explore the ijson library which is why I had to settle for "ijson.common.IncompleteJSONError: parse error: premature EOF" at the end of every run

@@ -1,5 +1,4 @@
 import ijson
-import time
 
 # Parse through large json and obtain New York Anthem PPO URLs
 def parseFile(json):
@@ -7,7 +6,7 @@ def parseFile(json):
     seen_urls = set()
     
     # open input and output files
-    file = open(json, 'rb')
+    file = open(json, 'r')
     output = open("result.txt","w")
     
     # initialize parser.
@@ -20,7 +19,7 @@ def parseFile(json):
             desc = value.upper()
         # check location
         if prefix=='reporting_structure.item.in_network_files.item.location':
-            if 'NEW YORK' in desc and 'PPO' in desc:
+            if 'PPO' in desc and 'NEW YORK' in desc:
                 # add to set & output if not seen
                 if value not in seen_urls:
                     seen_urls.add(value)
