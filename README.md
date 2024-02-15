@@ -15,7 +15,7 @@ To write code to open a machine readable index file and process it according to 
 Python 3
 - Install [Python3](https://www.python.org/downloads/) if you don't already have it
 - Install [pipenv](https://pipenv.pypa.io/en/latest/) using pip/homebrew/apt
-- Run 'pipenv install'
+- Run '''pipenv install'''
 
 ## Approach
 My approach was to use a python library for reading large JSON files. I picked [ijson](https://pypi.org/project/ijson/) as this is a solution to work with data as a stream, rather than a block.
