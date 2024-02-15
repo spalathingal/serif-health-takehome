@@ -22,10 +22,10 @@ My approach was to use a python library for reading large JSON files. I picked [
 Your output should be the list of machine readable file URLs corresponding to Anthem's PPO in New York state. Make sure to read through the hints and pointers section before declaring your solution complete.
 
 ## Metrics
--This took me about 3 hours to complete
--Processing the file takes about 2.5 mins (ends in premature EOF error)
+- This took me about 3 hours to complete
+- Processing the file takes about 2.5 mins (ends in premature EOF error)
 
 ### TradeOffs
--I had to write to the output per each url as opposed to waiting for the processing to finish just so I could see output as it came (to ensure it was working)
--I had to download the file, then extract, and then process when I should have figured out how to do it through code
--I manually typed the filename and had to create the output file ahead of time
+- I had to write to the output per each url as opposed to waiting for the processing to finish just so I could see output as it came (to ensure it was working)
+- I had to download the file, then extract, and then process when I should have figured out how to do it through code
+- I manually typed the filename and had to create the output file ahead of time
