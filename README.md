@@ -11,11 +11,14 @@ To write code to open a machine readable index file and process it according to 
 
 **What is the list of machine readable file URLs that represent the Anthem PPO network in New York state?**
 
-## PreReqs
-Python 3
+## Dependencies
 - Install [Python3](https://www.python.org/downloads/) if you don't already have it
 - Install [pipenv](https://pipenv.pypa.io/en/latest/) using pip/homebrew/apt
-- Run `pipenv install`
+- Run `pipenv install` to install dependencies
+
+### To Run
+- Start shell environment: `pipenv shell`
+- Run processing file: `python3 process_mrf.py`
 
 ## Approach
 My approach was to use a python library for reading large JSON files. I picked [ijson](https://pypi.org/project/ijson/) as this is a solution to work with data as a stream, rather than a block.

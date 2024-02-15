@@ -32,10 +32,4 @@ def parseFile(json):
     
     return
 
-# Run Section
-start = time.time()
 parseFile('2024-02-01_anthem_index.json')
-end = time.time()
-
-# Print time taken in minutes
-print('Execution time:', (start-end) / 60, 'minutes')
