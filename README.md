@@ -7,7 +7,9 @@ Here is my approach to the Serif Health Takehome assessment found [here](https:/
 ## Task
 The input to this takehome is the Anthem machine readable index file [table of contents](https://antm-pt-prod-dataz-nogbd-nophi-us-east1.s3.amazonaws.com/anthem/2024-02-01_anthem_index.json.gz) for February 2024. 
 
-To write code to open a machine readable index file and process it according to the schema published at [CMS' transparency in coverage repository](https://github.com/CMSgov/price-transparency-guide/tree/master/schemas/table-of-contents), and extract the data requested: **what is the list of machine readable file URLs that represent the Anthem PPO network in New York state?**
+To write code to open a machine readable index file and process it according to the schema published at [CMS' transparency in coverage repository](https://github.com/CMSgov/price-transparency-guide/tree/master/schemas/table-of-contents), and extract the data requested: 
+
+**What is the list of machine readable file URLs that represent the Anthem PPO network in New York state?**
 
 ## PreReqs
 Python 3
